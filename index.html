@@ -2,19 +2,23 @@
 <title>Gallinero tractor Plastimadera · AR</title>
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 <style>
-body{margin:0;font-family:system-ui,Arial,sans-serif;background:#111;color:#fff;font-size:21px;line-height:1.5}
-header{padding:16px;background:#000;border-bottom:4px solid #FFD400}h1{margin:0;font-size:30px;color:#FFD400}
-model-viewer{width:100%;height:72vh;background:#e9e6dc}
-.hs{background:#000;color:#FFD400;border:3px solid #FFD400;border-radius:10px;padding:6px 10px;font-size:18px;font-weight:700;max-width:220px;text-align:left;cursor:pointer}
+body{margin:0;font-family:system-ui,Arial,sans-serif;background:#000;color:#fff;font-size:21px;line-height:1.5}
+header{padding:16px;background:#000;border-bottom:4px solid #FF914C}h1{margin:0;font-size:30px;color:#FF914C}
+model-viewer{width:100%;height:78vh;background:#fff}
+#info{position:absolute;top:90px;right:10px;z-index:5;background:rgba(0,0,0,.88);color:#fff;border:4px solid #FF914C;border-radius:14px;padding:10px 14px;font-size:19px;max-width:330px;line-height:1.35}
+#info b{color:#FF914C}#info.min ul{display:none}#info ul{margin:4px 0;padding-left:18px}
+.wrap{position:relative}
+.hs{background:#000;color:#FF914C;border:3px solid #FF914C;border-radius:10px;padding:6px 10px;font-size:18px;font-weight:700;max-width:220px;text-align:left;cursor:pointer}
 .hs span{display:none;color:#fff;font-weight:400;font-size:17px}.hs.open span{display:block}
 .bar{display:flex;flex-wrap:wrap;gap:10px;padding:12px;background:#000}
-button{font-size:21px;font-weight:700;padding:14px 18px;border-radius:10px;border:3px solid #FFD400;background:#222;color:#FFD400}
-button.on{background:#FFD400;color:#000}#ar{background:#FFD400;color:#000;position:absolute;bottom:16px;left:50%;transform:translateX(-50%)}
-section{padding:18px 18px 8px;border-top:3px solid #444;max-width:900px;margin:auto}h2{color:#FFD400;font-size:27px}
-table{border-collapse:collapse;width:100%}td,th{border:2px solid #666;padding:8px;vertical-align:top}th{background:#FFD400;color:#000}
+button{font-size:21px;font-weight:700;padding:14px 18px;border-radius:10px;border:3px solid #FF914C;background:#222;color:#FF914C}
+button.on{background:#FF914C;color:#000}#ar{background:#FF914C;color:#000;position:absolute;bottom:16px;left:50%;transform:translateX(-50%)}
+section{padding:18px 18px 8px;border-top:3px solid #444;max-width:900px;margin:auto}h2{color:#FF914C;font-size:27px}
+table{border-collapse:collapse;width:100%}td,th{border:2px solid #666;padding:8px;vertical-align:top}th{background:#FF914C;color:#000}
 .warn{background:#5a1010;border-left:8px solid #ff5050;padding:10px}a{color:#7cf}small{font-size:17px}
 </style></head><body>
-<header><h1>Gallinero tractor de Plastimadera</h1>Propuesta para Fundación Armadillo · 6 m × 1.2 m × 1.8 m · 2 módulos con ruedas removibles · se mueve cada 3 meses</header>
+<header><span style="background:#FF914C;color:#000;font-weight:900;padding:2px 10px;border-radius:6px;margin-right:8px">MIA</span><h1 style="display:inline">Gallinero tractor de Plastimadera</h1>Propuesta para Fundación Armadillo · 6 m × 1.2 m × 1.8 m · 2 módulos con ruedas removibles · se mueve cada 3 meses</header>
+<div class="wrap"><div id="info" onclick="this.classList.toggle('min')"><b>INFOGRAFÍA ▾</b><ul><li><b>Medidas:</b> gallinero 1.2×2×1.8 m + corral 1.2×4×1.6 m = 6 m</li><li><b>Aves:</b> ~10 gallinas</li><li><b>Pesos*:</b> gallinero ≈490 kg (con tambo vacío ≈540, lleno ≈740) · corral ≈255 kg (≈320 con agua)</li><li><b>Material:</b> Plastimadera 2x2 y 4x4 gris, tablón 13¾×¾ café, polín Ø2"</li><li><b>Nidos:</b> 8 autocosechantes · <b>Perchas:</b> 4 escalonadas</li><li><b>Agua:</b> tambo 200 L con 5 niples · corral 60 L con flotador</li><li><b>Rotación:</b> se mueve cada 3 meses con 4 gatos-rueda ≥250 kg</li></ul><small>*densidad supuesta 0.95 g/cm³</small></div>
 <model-viewer id="mv" src="gallinero_tractor.gltf" alt="Gallinero tractor 3D" ar ar-modes="webxr scene-viewer quick-look" ar-scale="fixed" camera-controls touch-action="pan-y" shadow-intensity="1" exposure="1.1" camera-orbit="-35deg 70deg 9m" field-of-view="35deg">
 <button slot="ar-button" id="ar">📱 Ver en mi espacio (AR, tamaño real)</button>
 <div class="hs" slot="hotspot-1" data-position="-0.73 1.74 0" data-normal="0 1 0">1 Techo 2 % + canaleta<span>Cae 4 cm en 2 m hacia el corral. Canaleta PVC 4" en el borde bajo con bajante al depósito de 60 L.</span></div>
@@ -28,9 +32,10 @@ table{border-collapse:collapse;width:100%}td,th{border:2px solid #666;padding:8p
 <div class="hs" slot="hotspot-10" data-position="-2.88 0.05 0.6" data-normal="0 0 1">10 Ruedas removibles<span>4 receptores por módulo en el patín 4x4: el gato-rueda se mete, levanta 3–5 cm y se retira. Recomendación: ruedas de ≥250 kg c/u.</span></div>
 <div class="hs" slot="hotspot-11" data-position="-1 1.2 -0.62" data-normal="0 0 -1">11 Dos módulos<span>Gallinero (≈500 kg) y corral (≈320 kg con agua) se separan quitando 6 tornillos pasantes y se mueven por separado.</span></div>
 <div class="hs" slot="hotspot-12" data-position="-1.33 1.3 -1.34" data-normal="0 0 -1">12 Tambo 200 L + niples<span>Por fuera del gallinero, sobre una base elevada. Se llena a mano, con lluvia (desviador de primera lluvia y filtro) y con niebla. Tiene rebosadero y válvula con unión universal. Alimenta 5 niples a 40 cm del piso. Lleno pesa ≈250 kg: se vacía antes de mover.</span></div>
+<div class="hs" slot="hotspot-13" data-position="-0.95 0.05 0.62" data-normal="0 0 1">13 Receptores gato-rueda (12)<span>Manguito PTR 2" en el patín 4x4. El gato-rueda de palanca levanta el módulo 3–5 cm y después se retira.</span></div>
 <div class="hs" slot="hotspot-9" data-position="-0.98 0.66 0" data-normal="1 0 0">9 Puertas<span>Puerta de guillotina con rampa hacia el corral, puerta trasera de limpieza de 104×150 cm y puerta del corral en el extremo lejano.</span></div>
-</model-viewer>
-<div class="bar">
+</model-viewer></div>
+<div class="bar"><button id="sep">Separar módulos</button><a href="ar-ancla.html"><button>📷 AR con cartel</button></a>
 <button class="on" data-l="Forro">Forro</button><button class="on" data-l="Corral">Corral</button><button class="on" data-l="Niebla">Arpilla</button>
 <button id="exp">Explosivo</button><button id="hsb" class="on">Rótulos</button></div>
 <section><h2>1 · Modulable y escalable</h2>
@@ -65,6 +70,8 @@ function apply(){if(!mv.model)return;for(const m of mv.model.materials){const L=
 mv.addEventListener('load',apply);
 document.querySelectorAll('[data-l]').forEach(b=>b.onclick=()=>{const L=b.dataset.l;hidden.has(L)?hidden.delete(L):hidden.add(L);b.classList.toggle('on');apply();});
 document.querySelectorAll('.hs').forEach(h=>h.onclick=()=>h.classList.toggle('open'));
-let ex=false;document.getElementById('exp').onclick=e=>{ex=!ex;e.target.classList.toggle('on');mv.src=ex?'gallinero_explosivo.gltf':'gallinero_tractor.gltf';document.querySelectorAll('.hs').forEach(h=>h.style.display=ex?'none':'');};
+let ex=false,sp=false;const SRC=()=>ex?'gallinero_explosivo.gltf':(sp?'gallinero_separado.gltf':'gallinero_tractor.gltf');
+document.getElementById('sep').onclick=e=>{sp=!sp;e.target.classList.toggle('on');e.target.textContent=sp?'Unir módulos':'Separar módulos';mv.src=SRC();};
+document.getElementById('exp').onclick=e=>{ex=!ex;e.target.classList.toggle('on');mv.src=SRC();document.querySelectorAll('.hs').forEach(h=>h.style.display=ex?'none':'');};
 let hs=true;document.getElementById('hsb').onclick=e=>{hs=!hs;e.target.classList.toggle('on');document.querySelectorAll('.hs').forEach(h=>h.style.display=hs&&!ex?'':'none');};
 </script></body></html>

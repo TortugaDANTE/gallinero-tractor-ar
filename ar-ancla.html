@@ -2,7 +2,7 @@
 <title>Gallinero tractor · AR sobre imagen ancla</title>
 <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
-<style>body{margin:0;font-family:system-ui,Arial}#tip{position:fixed;top:0;left:0;right:0;z-index:10;background:#000;color:#FFD400;font-size:22px;font-weight:700;padding:12px;text-align:center;border-bottom:4px solid #FFD400}
+<style>body{margin:0;font-family:system-ui,Arial}#tip{position:fixed;top:0;left:0;right:0;z-index:10;background:#000;color:#FF914C;font-size:22px;font-weight:700;padding:12px;text-align:center;border-bottom:4px solid #FF914C}
 #tip a{color:#fff}</style></head><body>
 <div id="tip">Apunta la cámara a la imagen del cartel · <a href="index.html">Ver en mi espacio (sin cartel)</a></div>
 <a-scene mindar-image="imageTargetSrc: targets/ancla_gallinero.mind; uiScanning: yes" color-space="sRGB" renderer="colorManagement: true" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
@@ -10,6 +10,6 @@
 <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 <a-light type="ambient" intensity="1"></a-light><a-light type="directional" position="1 2 3" intensity="0.8"></a-light>
 <a-entity mindar-image-target="targetIndex: 0">
-<a-gltf-model src="#m" rotation="90 0 0" position="0 -0.05 0" scale="0.14 0.14 0.14"></a-gltf-model>
-<a-text value="GALLINERO TRACTOR" color="#FFD400" align="center" width="1.6" position="0 0.62 0.05"></a-text>
+<a-gltf-model src="#m" rotation="90 0 0" position="0 -0.05 0" scale="0.13 0.13 0.13"></a-gltf-model>
+<a-text value="GALLINERO TRACTOR" color="#FF914C" align="center" width="1.6" position="0 0.42 0.05"></a-text>
 </a-entity></a-scene></body></html>
