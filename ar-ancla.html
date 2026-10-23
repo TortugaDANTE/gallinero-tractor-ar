@@ -2,15 +2,56 @@
 <title>Gallinero tractor · AR sobre imagen ancla</title>
 <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/aframe-extras@7.5.4/dist/aframe-extras.min.js"></script>
-<style>body{margin:0;font-family:system-ui,Arial}#tip{position:fixed;top:0;left:0;right:0;z-index:10;background:#000;color:#FF914C;font-size:22px;font-weight:700;padding:12px;text-align:center;border-bottom:4px solid #FF914C}
-#tip a{color:#fff}</style></head><body>
+<style>body{margin:0;font-family:system-ui,Arial,sans-serif}
+#tip{position:fixed;top:0;left:0;right:0;z-index:10;background:#000;color:#FF914C;font-size:20px;font-weight:700;padding:10px;text-align:center;border-bottom:4px solid #FF914C}
+#tip a{color:#fff}
+#panel{position:fixed;left:0;right:0;bottom:0;z-index:10;background:rgba(0,0,0,.88);border-top:4px solid #FF914C;padding:8px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+#panel button{font-size:19px;font-weight:700;min-height:52px;padding:10px 14px;border-radius:10px;border:3px solid #FF914C;background:#222;color:#FF914C}
+#panel button.on{background:#FF914C;color:#000}
+#partes{display:none;width:100%;justify-content:center;flex-wrap:wrap;gap:8px}#partes.open{display:flex}
+#panel #partes button{background:#fff;color:#000;border-color:#fff}#panel #partes button.off{background:#222;color:#fff;text-decoration:line-through}
+</style></head><body>
 <div id="tip">Apunta la cámara a la imagen del cartel · <a href="index.html">Ver en mi espacio (sin cartel)</a></div>
+<div id="panel">
+<button id="bLet" class="on">🏷️ Letreros</button><button id="bPar">🧩 Partes</button><button id="bExp">💥 Explosión</button><button id="bSep">↔️ Separar módulos</button>
+<div id="partes"></div></div>
+<script>
+// Animación propia con THREE.AnimationMixer (sin aframe-extras). Agranda las gallinas para que se vean sobre el cartel.
+AFRAME.registerComponent('gallinas',{schema:{escala:{default:2.2}},
+ init(){this.mixer=null;this.el.addEventListener('model-loaded',()=>this.setup());},
+ setup(){const o=this.el.getObject3D('mesh');if(!o)return;if(this.mixer)this.mixer.stopAllAction();this.mixer=null;
+  o.traverse(n=>{if(/^Gallina_\d+$/.test(n.name)){const s=n.position.x<-1?this.data.escala*0.7:this.data.escala;n.scale.set(s,s,s);}
+   if(n.material){const ms=Array.isArray(n.material)?n.material:[n.material];ms.forEach(m=>{if(m.transparent){m.depthWrite=false;}});}});
+  const clips=o.animations||[];if(clips.length){this.mixer=new THREE.AnimationMixer(o);clips.forEach(c=>this.mixer.clipAction(c).play());}
+  this.el.emit('gallinas-listas',{n:clips.length});},
+ tick(t,dt){if(this.mixer)this.mixer.update(Math.min(dt,100)/1000);}});
+AFRAME.registerComponent('billboard',{tick(){const c=this.el.sceneEl.camera;if(!c)return;const q=new THREE.Quaternion();c.getWorldQuaternion(q);
+ const p=new THREE.Quaternion();this.el.object3D.parent.getWorldQuaternion(p);this.el.object3D.quaternion.copy(p.invert().multiply(q));}});
+</script>
 <a-scene mindar-image="imageTargetSrc: https://cdn.jsdelivr.net/gh/TortugaDANTE/gallinero-tractor-ar@gh-pages/targets/ancla_gallinero.mind; uiScanning: yes" color-space="sRGB" renderer="colorManagement: true" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
-<a-assets><a-asset-item id="m" src="gallinero_tractor.gltf"></a-asset-item></a-assets>
 <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 <a-light type="ambient" intensity="1"></a-light><a-light type="directional" position="1 2 3" intensity="0.8"></a-light>
 <a-entity mindar-image-target="targetIndex: 0">
-<a-gltf-model src="#m" animation-mixer="clip: Gallinas; loop: repeat" rotation="90 0 0" position="0 -0.05 0" scale="0.13 0.13 0.13"></a-gltf-model>
+<a-entity id="modelo" rotation="90 0 0" position="0 -0.05 0" scale="0.13 0.13 0.13">
+<a-entity id="gm" gltf-model="gallinero_tractor.gltf" gallinas></a-entity>
+<a-entity id="letreros"></a-entity>
+</a-entity>
 <a-text value="GALLINERO TRACTOR" color="#FF914C" align="center" width="1.6" position="0 0.42 0.05"></a-text>
-</a-entity></a-scene></body></html>
+</a-entity></a-scene>
+<script>
+const LBL=[['Techo 2 % + canaleta','-0.73 1.95 0'],['Ventilación alta','-2 1.7 -0.7'],['Nidos','-2.4 0.8 1.0'],['Perchas','-2.3 1.45 0'],['Comederos','-2 1.1 0.5'],['Bebedero flotador','-0.25 0.45 -0.4'],['Gallinas (corral)','1 0.7 0'],['Arpilla atrapanieblas','1 1.5 -0.7'],['Tambo 200 L','-1.33 1.6 -1.34'],['Ruedas removibles','-2.88 0.25 0.7'],['Puertas','-0.98 0.8 0']];
+const lw=document.getElementById('letreros');
+LBL.forEach(([t,p])=>{const e=document.createElement('a-entity');e.setAttribute('position',p);e.setAttribute('billboard','');
+ e.innerHTML='<a-plane color="#000" width="1.9" height="0.36" material="opacity:0.85;transparent:true" position="0 0 -0.01"></a-plane><a-text value="'+t+'" color="#FF914C" align="center" width="4.2"></a-text>';lw.appendChild(e);});
+const PARTES=[['Techo','Techo'],['Forro','Forro'],['Corral','Corral'],['Niebla','Arpilla'],['Nidos','Nidos'],['Perchas','Perchas'],['Agua','Tambo'],['Dispositivos','Comederos']];
+const hidden=new Set(['Techo']);const gm=document.getElementById('gm');const pd=document.getElementById('partes');
+function apply(){const o=gm.getObject3D('mesh');if(!o)return;o.traverse(n=>{if(!n.material)return;(Array.isArray(n.material)?n.material:[n.material]).forEach(m=>{const L=(m.name||'').split('__')[0];m.visible=L==='Gallinas'||!hidden.has(L);});});}
+PARTES.forEach(([k,t])=>{const b=document.createElement('button');b.textContent=t;if(hidden.has(k))b.classList.add('off');b.onclick=()=>{hidden.has(k)?hidden.delete(k):hidden.add(k);b.classList.toggle('off');apply();};pd.appendChild(b);});
+gm.addEventListener('model-loaded',apply);
+let ex=false,sp=false,lt=true;const SRC=()=>ex?'gallinero_explosivo.gltf':(sp?'gallinero_separado.gltf':'gallinero_tractor.gltf');
+const setLbl=()=>lw.setAttribute('visible',lt&&!ex&&!sp);
+document.getElementById('bLet').onclick=e=>{lt=!lt;e.currentTarget.classList.toggle('on');setLbl();};
+document.getElementById('bPar').onclick=e=>{e.currentTarget.classList.toggle('on');pd.classList.toggle('open');};
+document.getElementById('bExp').onclick=e=>{ex=!ex;e.currentTarget.classList.toggle('on');gm.setAttribute('gltf-model',SRC());setLbl();};
+document.getElementById('bSep').onclick=e=>{sp=!sp;const b=e.currentTarget;b.classList.toggle('on');b.textContent=sp?'↔️ Unir módulos':'↔️ Separar módulos';gm.setAttribute('gltf-model',SRC());setLbl();};
+</script></body></html>
