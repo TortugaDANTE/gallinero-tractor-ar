@@ -1,0 +1,120 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gallinero tractor Plastimadera · AR</title>
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+<style>
+body{margin:0;font-family:system-ui,Arial,sans-serif;background:#000;color:#fff;font-size:21px;line-height:1.5}
+header{padding:16px;background:#000;border-bottom:4px solid #FF914C}h1{margin:0;font-size:30px;color:#FF914C}
+model-viewer{width:100%;height:78vh;background:#fff}
+#info{position:absolute;top:90px;right:10px;z-index:5;background:rgba(0,0,0,.88);color:#fff;border:4px solid #FF914C;border-radius:14px;padding:10px 14px;font-size:19px;max-width:330px;line-height:1.35}
+#info b{color:#FF914C}#info.min ul{display:none}#info ul{margin:4px 0;padding-left:18px}
+.wrap{position:relative}
+.hs{background:#000;color:#FF914C;border:3px solid #FF914C;border-radius:10px;padding:6px 10px;font-size:18px;font-weight:700;max-width:220px;text-align:left;cursor:pointer}
+.hs span{display:none;color:#fff;font-weight:400;font-size:17px}.hs.open span{display:block}
+.bar{display:flex;flex-wrap:wrap;gap:10px;padding:12px;background:#000}
+button{font-size:21px;font-weight:700;padding:14px 18px;border-radius:10px;border:3px solid #FF914C;background:#222;color:#FF914C}
+button.on{background:#FF914C;color:#000}#ar{background:#FF914C;color:#000;position:absolute;bottom:16px;left:50%;transform:translateX(-50%)}
+section{padding:18px 18px 8px;border-top:3px solid #444;max-width:900px;margin:auto}h2{color:#FF914C;font-size:27px}
+table{border-collapse:collapse;width:100%}td,th{border:2px solid #666;padding:8px;vertical-align:top}th{background:#FF914C;color:#000}
+.warn{background:#5a1010;border-left:8px solid #ff5050;padding:10px}a{color:#7cf}small{font-size:17px}
+header .ttl{display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+.mia{background:#FF914C;color:#000;font-weight:900;padding:2px 10px;border-radius:6px;font-size:21px}
+header h1{font-weight:800;line-height:1.15;letter-spacing:.2px}
+.rule{border:0;height:3px;width:120px;background:#FF914C;margin:12px 0 10px}
+.sub{margin:0;font-size:20px;font-weight:400;color:#fff;line-height:1.45;max-width:1100px}
+#xbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:10px 12px;background:#111;border-top:3px solid #FF914C}
+#xbar label{font-size:21px;font-weight:700;color:#FF914C}#xr{width:min(320px,60vw);height:34px;accent-color:#FF914C}
+@media (max-width:700px){.sub{font-size:18px}.rule{margin:10px 0 8px;width:90px}.mia{font-size:18px}}
+@media (max-width:700px){
+#info{top:8px;right:8px;left:auto;max-width:min(78vw,300px);max-height:42vh;overflow-y:auto;-webkit-overflow-scrolling:touch;font-size:clamp(17px,4.6vw,19px);padding:8px 12px;border-width:3px;box-sizing:border-box}
+#info>b{display:block;position:sticky;top:-8px;background:rgba(0,0,0,.95);padding:4px 0;cursor:pointer}
+#info ul{padding-left:16px}
+#info{z-index:50}
+.hs{font-size:16px;padding:4px 8px;max-width:150px;border-width:2px;line-height:1.25}.hs span{font-size:16px}
+header{padding:12px}h1{font-size:clamp(22px,6vw,30px)}
+}
+</style></head><body>
+<header><div class="ttl"><span class="mia">MIA</span><h1>Gallinero tractor de Plastimadera</h1></div><hr class="rule"><p class="sub">Propuesta para Fundación Armadillo · 6 m × 1.2 m × 1.8 m · 2 módulos con ruedas removibles · se mueve cada 3 meses</p></header>
+<div class="wrap"><div id="info" onclick="this.classList.toggle('min')"><b>INFOGRAFÍA ▾</b><ul><li><b>Medidas:</b> gallinero 1.2×2×1.8 m + corral 1.2×4×1.6 m = 6 m</li><li><b>Aves:</b> ~10 gallinas</li><li><b>Pesos*:</b> gallinero ≈490 kg (con tambo vacío ≈540, lleno ≈740) · corral ≈255 kg (≈320 con agua)</li><li><b>Material:</b> Plastimadera 2x2 y 4x4 gris, tablón 13¾×¾ café, polín Ø2"</li><li><b>Nidos:</b> 8 autocosechantes · <b>Perchas:</b> 4 escalonadas</li><li><b>Agua:</b> tambo 200 L con 5 niples · corral 60 L con flotador</li><li><b>Rotación:</b> se mueve cada 3 meses con 4 gatos-rueda ≥250 kg</li></ul><small>*densidad supuesta 0.95 g/cm³</small></div>
+<model-viewer id="mv" src="gallinero_tractor.gltf" autoplay animation-name="Gallinas" alt="Gallinero tractor 3D" ar ar-modes="webxr scene-viewer quick-look" ar-scale="fixed" camera-controls touch-action="pan-y" shadow-intensity="1" exposure="1.1" camera-orbit="-35deg 70deg 9m" field-of-view="35deg">
+<button slot="ar-button" id="ar">📱 Ver en mi espacio (AR, tamaño real)</button>
+<div class="hs" slot="hotspot-1" data-position="-0.73 1.74 0" data-normal="0 1 0">1 Techo 2 % + canaleta<span>Cae 4 cm en 2 m hacia el corral. Canaleta PVC 4" en el borde bajo con bajante al depósito de 60 L.</span></div>
+<div class="hs" slot="hotspot-2" data-position="-2 1.58 -0.62" data-normal="0 0 -1">2 Ventilación alta<span>Claro con malla de 150 a 166 cm en los dos costados (ventilación cruzada sin corriente sobre las perchas) y malla en la parte alta de la puerta trasera.</span></div>
+<div class="hs" slot="hotspot-3" data-position="-2.4 0.66 0.96" data-normal="0 0 1">3 Nidos autocosechantes<span>8 nidos (4 por lado). El piso inclinado 10° rueda el huevo a un cajón que se abre por fuera.</span></div>
+<div class="hs" slot="hotspot-4" data-position="-2.3 1.36 0" data-normal="0 1 0">4 Perchas escalonadas<span>Ø2" a 135, 120, 105 y 92 cm. La alta va junto a la puerta de limpieza y la baja junto a la puerta de las gallinas.</span></div>
+<div class="hs" slot="hotspot-5" data-position="-2 1.0 0.5" data-normal="0 0 1">5 Comederos PVC 3"<span>2 tubos verticales con tapa roscada, abrazaderas al poste y codo de 90° con la boca a 15 cm del piso.</span></div>
+<div class="hs" slot="hotspot-6" data-position="-0.25 0.2 -0.4" data-normal="0 1 0">6 Bebedero de flotador (corral)<span>Por gravedad desde el depósito de 60 L del corral, sin electricidad, con el borde a ~18 cm. El gallinero bebe de los niples del tambo.</span></div>
+<div class="hs" slot="hotspot-7" data-position="1 1.3 -0.62" data-normal="0 0 -1">7 Arpilla atrapanieblas<span>Raschel en la franja alta del costado que da al viento, más un techo parcial de sombra. Canaletas al pie llevan el agua al depósito.</span></div>
+<div class="hs" slot="hotspot-8" data-position="3.06 0.06 0.5" data-normal="1 0 0">8 Patín 4x4 + argollas<span>Patín continuo con puntas biseladas; se jala de 2 argollas con eslinga en V.</span></div>
+<div class="hs" slot="hotspot-10" data-position="-2.88 0.05 0.6" data-normal="0 0 1">10 Ruedas removibles<span>4 receptores por módulo en el patín 4x4: el gato-rueda se mete, levanta 3–5 cm y se retira. Recomendación: ruedas de ≥250 kg c/u.</span></div>
+<div class="hs" slot="hotspot-11" data-position="-1 1.2 -0.62" data-normal="0 0 -1">11 Dos módulos<span>Gallinero (≈500 kg) y corral (≈320 kg con agua) se separan quitando 6 tornillos pasantes y se mueven por separado.</span></div>
+<div class="hs" slot="hotspot-12" data-position="-1.33 1.3 -1.34" data-normal="0 0 -1">12 Tambo 200 L + niples<span>Por fuera del gallinero, sobre una base elevada. Se llena a mano, con lluvia (desviador de primera lluvia y filtro) y con niebla. Tiene rebosadero y válvula con unión universal. Alimenta 5 niples a 40 cm del piso. Lleno pesa ≈250 kg: se vacía antes de mover.</span></div>
+<div class="hs" slot="hotspot-13" data-position="-0.95 0.05 0.62" data-normal="0 0 1">13 Receptores gato-rueda (12)<span>Manguito PTR 2" en el patín 4x4. El gato-rueda de palanca levanta el módulo 3–5 cm y después se retira.</span></div>
+<div class="hs" slot="hotspot-9" data-position="-0.98 0.66 0" data-normal="1 0 0">9 Puertas<span>Puerta de guillotina con rampa hacia el corral, puerta trasera de limpieza de 104×150 cm y puerta del corral en el extremo lejano.</span></div>
+</model-viewer></div>
+<div id="xbar"><button id="xon">🧩 Separar piezas (vista explotada)</button><button id="xoff">Unir piezas</button><label for="xr">Separación</label><input id="xr" type="range" min="0" max="100" value="0" aria-label="Separación de piezas"></div>
+<div class="bar"><button id="sep">Separar módulos</button><a href="ar-ancla.html"><button>📷 AR con cartel</button></a>
+<button class="on" data-l="Forro">Forro</button><button class="on" data-l="Corral">Corral</button><button class="on" data-l="Niebla">Arpilla</button>
+<button id="exp">Explosivo</button><button id="hsb" class="on">Rótulos</button></div>
+<section><h2>1 · Modulable y escalable</h2>
+<p>El <b>gallinero de 2 m</b> es el núcleo: concentra los nidos, las perchas, el agua y el alimento. El <b>corral se arma con módulos de 2 m</b> (postes, diagonales y malla), y se le pueden agregar o quitar módulos. La versión base lleva 2 módulos, para 6 m en total. Cada módulo usa piezas de 200 cm que se cortan de un tramo comercial (el largo hay que confirmarlo con el proveedor).</p>
+<p><small>Más módulos dan más espacio de pastoreo, pero también más peso que arrastrar. El agua, el alimento y los nidos dependen del número de aves, no del largo.</small></p></section>
+<section><h2>2 · Ciclo de 3 meses sobre camas de cultivo</h2>
+<p>El tractor cabe sobre una cama de 1.2 × 6 m. Las gallinas desyerban, comen insectos y abonan. A los 3 meses se jala a la siguiente cama, y la anterior queda abonada para su siguiente cultivo.</p>
+<table><tr><th>Trimestre</th><th>Cama A</th><th>Cama B</th><th>Cama C</th><th>Cama D</th></tr>
+<tr><td>1</td><td>🐔 Gallinas</td><td>Leguminosas</td><td>Fruto</td><td>Descanso</td></tr>
+<tr><td>2</td><td>Leguminosas / fruto*</td><td>🐔 Gallinas</td><td>Leguminosas</td><td>Fruto</td></tr>
+<tr><td>3</td><td>Fruto</td><td>Leguminosas / fruto*</td><td>🐔 Gallinas</td><td>Leguminosas</td></tr>
+<tr><td>4</td><td>Hoja ✔︎</td><td>Fruto</td><td>Leguminosas / fruto*</td><td>🐔 Gallinas</td></tr></table>
+<p>Ejemplos genéricos: hoja (lechuga, acelga), fruto (jitomate o chile en tutor, calabaza), leguminosas (frijol, haba, abono verde).</p>
+<p class="warn"><b>Inocuidad:</b> la gallinaza fresca puede traer <i>E. coli</i> y <i>Salmonella</i>. Las guías de extensión piden dejar <b>al menos 120 días</b> entre la incorporación del estiércol crudo y la cosecha de cultivos que tocan el suelo (hoja, raíz, fresa), y <b>90 días</b> para los que no lo tocan. *Por eso, justo después de las gallinas conviene sembrar leguminosas, abono verde o fruto en tutor, o dejar la cama en descanso. La hoja comestible va hasta cumplir los 120 días. El estiércol de la charola se composta (140–160 °F, unos 60–70 °C) antes de usarlo.</p></section>
+<section><h2>3 · Vida de las gallinas</h2>
+<p><b>Rutina diaria:</b> se abre la puerta de guillotina al amanecer → ponen en los nidos, casi siempre por la mañana → forrajean en el corral → beben de los bebederos de flotador → al atardecer suben solas a las perchas y se cierra la puerta (protección contra depredadores).</p>
+<p><b>Bienestar:</b> espacio suficiente; la guía citada pide un mínimo de 3 a 5 pies² (≈0.28–0.46 m²) por ave en interior. Además: sombra (arpilla), ventilación alta sin corrientes sobre las perchas, malla y cierre nocturno contra depredadores, y un rincón de tierra seca para el baño de tierra (dentro del corral, sobre el suelo).</p>
+<p><b>Ciclo de vida:</b> pollita → empieza a poner <b>alrededor de los 6 meses</b> → la postura más alta es en los <b>primeros 2 años</b>, unos 6 huevos por semana → <b>muda</b> anual a inicios del otoño, cuando baja la postura → puede seguir poniendo de 5 a 10 años, cada vez menos. Necesita de 12 a 14 horas de luz para poner de forma continua.</p>
+<p><b>Manejo para ~10 aves:</b> el gallinero tiene 2.4 m² (unos 0.24 m² por ave). Eso queda por debajo de la guía, así que con 10 aves es indispensable que salgan al corral (4.8 m²) a diario. Con 6 a 8 aves se cumple con holgura. Además: 2 comederos de 3" (≈5 aves por boca) más grit y concha molida, agua limpia todos los días, juntar huevo a diario, cambiar la cama de los nidos y sacar la charola en cada movimiento.</p>
+<p><small>Fuentes:
+<a href="https://extension.umn.edu/small-scale-poultry/raising-chickens-eggs">University of Minnesota Extension – Raising chickens for eggs</a> ·
+<a href="https://extension.umaine.edu/publications/2510e/">University of Maine – Using manure on vegetable gardens</a> ·
+<a href="https://www.ams.usda.gov/grades-standards/soil-building-manures-composts">USDA AMS – Regla de 90/120 días</a> ·
+<a href="https://naes.unr.edu/publication.aspx?PubID=3028">University of Nevada, Reno – Chicken manure safely</a> ·
+<a href="https://hort.extension.wisc.edu/articles/safely-using-manure-garden/">UW–Madison Extension – Safely using manure</a></small></p></section>
+<section><h2>Cómo verlo en AR</h2><p><b>Con el cartel:</b> abre <a href="ar-ancla.html">AR sobre imagen ancla</a> y apunta a la imagen impresa. <b>Android:</b> abre este enlace en Chrome y toca “Ver en mi espacio”. Se abre la AR del navegador o Scene Viewer (requiere Google Play Services para AR). <b>iPhone/iPad:</b> ábrelo en Safari y toca el mismo botón. Se abre Quick Look, que convierte el modelo de forma automática. El modelo está a escala real, 6 m de largo, así que necesitas un espacio amplio.</p>
+<p><small>Boceto de desarrollo: cotas nominales y largo comercial supuesto. No es un plano de fabricación.</small></p></section>
+<script>
+const mv=document.getElementById('mv');const hidden=new Set();
+function apply(){if(!mv.model)return;for(const m of mv.model.materials){const L=m.name.split('__')[0];const base=m.name.includes('malla')?0.3:1;
+ m.setAlphaMode(hidden.has(L)||base<1?'BLEND':'OPAQUE');const c=m.pbrMetallicRoughness.baseColorFactor;m.pbrMetallicRoughness.setBaseColorFactor([c[0],c[1],c[2],hidden.has(L)?0:base]);}}
+mv.addEventListener('load',apply);
+document.querySelectorAll('[data-l]').forEach(b=>b.onclick=()=>{const L=b.dataset.l;hidden.has(L)?hidden.delete(L):hidden.add(L);b.classList.toggle('on');apply();});
+document.querySelectorAll('.hs').forEach(h=>h.onclick=()=>h.classList.toggle('open'));
+let ex=false,sp=false;const SRC=()=>ex?'gallinero_explosivo.gltf':(sp?'gallinero_separado.gltf':'gallinero_tractor.gltf');
+document.getElementById('sep').onclick=e=>{sp=!sp;e.target.classList.toggle('on');e.target.textContent=sp?'Unir módulos':'Separar módulos';mv.src=SRC();};
+document.getElementById('exp').onclick=e=>{ex=!ex;e.target.classList.toggle('on');mv.src=SRC();document.querySelectorAll('.hs').forEach(h=>h.style.display=ex?'none':'');};
+let hs=true;document.getElementById('hsb').onclick=e=>{hs=!hs;e.target.classList.toggle('on');document.querySelectorAll('.hs').forEach(h=>h.style.display=hs&&!ex?'':'none');};
+</script><script>if(matchMedia('(max-width:700px)').matches)document.getElementById('info').classList.add('min')</script>
+<script>
+// Vista explotada animada: mueve los nodos del modelo (por capa) sin cambiar el archivo. En 0 = idéntico al original.
+(function(){const mv=document.getElementById('mv'),xr=document.getElementById('xr');
+const OFF={Corral:[1.6,0,0],BaseCorral:[1.6,-0.4,0],Niebla:[1.6,0,-0.6],Techo:[0,1.3,0],Ventilación:[0,0.7,0],Forro:[-0.9,0,0],
+ Base:[0,-0.5,0],Agua:[0,0,-1.0],Nidos:[0,0,1.0],Dispositivos:[0,0.2,0.6],Perchas:[0,0.5,0],Puertas:[0,0.25,0],Estructura:[0,0,0]};
+let parts=[],cur=0,anim=null;
+function scene(){const s=Object.getOwnPropertySymbols(mv).find(x=>x.description==='scene');return s&&mv[s];}
+function setup(){parts=[];const sc=scene();if(!sc)return;const found=[];
+ sc.traverse(n=>{if(!n.name)return;let o=null;const L=n.name.split('__')[0];
+  if(n.name.includes('__')&&OFF[L])o=OFF[L];else if(/^Gallina_\d+$/.test(n.name))o='hen';if(o)found.push([n,o]);});
+ for(const [n,o] of found){let off=o;
+  if(o==='hen'){const x=n.position.x;off=x>-1?OFF.Corral:[0,0,0];
+   // gallinas animadas: se envuelven en un grupo para no pelear con la animación
+   const g=new n.constructor();g.name=n.name+'_x';n.parent.add(g);g.add(n);parts.push({n:g,b:g.position.clone(),o:off});continue;}
+  parts.push({n,b:n.position.clone(),o:off});}
+ xr.dataset.parts=parts.length;}
+function apply(t){cur=t;for(const p of parts){p.n.position.set(p.b.x+p.o[0]*t,p.b.y+p.o[1]*t,p.b.z+p.o[2]*t);}
+ const sc=scene();if(sc&&sc.queueRender)sc.queueRender();xr.value=Math.round(t*100);document.querySelectorAll(".hs").forEach(h=>h.style.visibility=t>0.02?"hidden":"");}
+function go(to){cancelAnimationFrame(anim);const from=cur,t0=performance.now(),D=1200;
+ const step=now=>{const k=Math.min(1,(now-t0)/D),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;apply(from+(to-from)*e);if(k<1)anim=requestAnimationFrame(step);};anim=requestAnimationFrame(step);}
+mv.addEventListener('load',()=>{cur=0;xr.value=0;setup();});
+document.getElementById('xon').onclick=()=>go(1);document.getElementById('xoff').onclick=()=>go(0);
+xr.oninput=()=>{cancelAnimationFrame(anim);apply(xr.value/100);};
+window.__explode={go,apply,parts:()=>parts.length};})();
+</script>
+</body></html>
