@@ -20,6 +20,8 @@ table{border-collapse:collapse;width:100%}td,th{border:2px solid #666;padding:8p
 #info{top:8px;right:8px;left:auto;max-width:min(78vw,300px);max-height:42vh;overflow-y:auto;-webkit-overflow-scrolling:touch;font-size:clamp(17px,4.6vw,19px);padding:8px 12px;border-width:3px;box-sizing:border-box}
 #info>b{display:block;position:sticky;top:-8px;background:rgba(0,0,0,.95);padding:4px 0;cursor:pointer}
 #info ul{padding-left:16px}
+#info{z-index:50}
+.hs{font-size:16px;padding:4px 8px;max-width:150px;border-width:2px;line-height:1.25}.hs span{font-size:16px}
 header{padding:12px}h1{font-size:clamp(22px,6vw,30px)}
 }
 </style></head><body>
@@ -80,4 +82,5 @@ let ex=false,sp=false;const SRC=()=>ex?'gallinero_explosivo.gltf':(sp?'gallinero
 document.getElementById('sep').onclick=e=>{sp=!sp;e.target.classList.toggle('on');e.target.textContent=sp?'Unir módulos':'Separar módulos';mv.src=SRC();};
 document.getElementById('exp').onclick=e=>{ex=!ex;e.target.classList.toggle('on');mv.src=SRC();document.querySelectorAll('.hs').forEach(h=>h.style.display=ex?'none':'');};
 let hs=true;document.getElementById('hsb').onclick=e=>{hs=!hs;e.target.classList.toggle('on');document.querySelectorAll('.hs').forEach(h=>h.style.display=hs&&!ex?'':'none');};
-</script></body></html>
+</script><script>if(matchMedia('(max-width:700px)').matches)document.getElementById('info').classList.add('min')</script>
+</body></html>
